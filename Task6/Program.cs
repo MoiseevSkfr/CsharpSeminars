@@ -9,15 +9,18 @@ Console.WriteLine("Введите число 2:");
 int number1 = int.Parse(Console.ReadLine());
 FindingMultiple(number, number1);
 
-void FindingMultiple(int num,int num1)
+void FindingMultiple(float num,float num1)
 {
-    int result = num % 10;
+    //int result = num / num1;
+    //if (num = result * num1;) 
+
     if (num % num1 == 0)
     {
         Console.WriteLine("Второе число кратно первому");
     }
-    if (num % num1 != 0)
+    else
     {
+        float result = num % num1;
         Console.WriteLine("Второе число не кратно первому, остаток " + result);
     }
 }
