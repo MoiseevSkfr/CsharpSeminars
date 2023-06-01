@@ -1,38 +1,28 @@
-﻿//ДЗ семинар 3
-//Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-//14212 -> нет
-//12821 -> да
-//23432 -> да
+﻿//Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел от 1 до А.
+//7 -> 28
+//4 -> 10
+//8 -> 36
 
-void FindingMultiple(int num)
+Console.Clear();
+string mess = "Введите число:";
+int num = Prompt(mess);
+int summ = GetSumNums(num);
+Console.WriteLine($"Сумма равна = {summ}");
+
+int Prompt(string message)
 {
-if (num < 100000 && num > 9999)
-{
-    int fiveNum = num % 10;
-    int fourNum = num /10 % 10;
-    int thirdNum = num /100 % 10;
-    int summRight = fiveNum + fourNum + thirdNum;
-
-    int firstNum = num / 10000;
-    int secondNum = num / 1000 % 10;
-    int summLeft = firstNum + secondNum + thirdNum;
-    
-    if(summLeft == summRight)
-    {
-        Console.WriteLine("Число палиндром");
-    }
-    else
-    {
-        Console.WriteLine("Число не является палиндромом");
-    }
-
-}
-else 
-    {
-        Console.WriteLine("Не верное число");
-    }
+    Console.WriteLine(message);
+    int number = int.Parse(Console.ReadLine());
+    return number;
 }
 
-Console.WriteLine("Введите число:");
-int number = int.Parse(Console.ReadLine()!);
-FindingMultiple(number);
+int GetSumNums(int number)
+{
+    int sum = 0;
+    for (int i = 1; i <= number; i++)
+    {
+        sum = sum + i;
+        Console.Write(sum + " ");
+    }
+    return sum;
+}
